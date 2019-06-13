@@ -1,0 +1,15 @@
+CLASSES = 12
+DATASET_PATH = "dataset"
+LB_PATH = "lb.pickle"
+MODEL_LOSS = "categorical_crossentropy"
+MODEL_PATH = "output/witcher-classifier.h5"
+PLOT_PATH = "output/plot.png"
+UNKNOWN_LABEL = "Unknown"
+BATCH_SIZE = 21
+IMAGE_WIDTH = 224
+IMAGE_HEIGHT = 224
+IMAGE_SHOW_WIDTH = 400
+IMAGE_SHOW_HEIGHT = 400
+CHANNEL_NUMBER = 3
+LEARNING_RATE = 1e-3
+EPOCHS = 40
