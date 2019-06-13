@@ -18,6 +18,14 @@ I used transfer learning with pre-trained weights from the VGG-16 model. This he
 
 The model was trained on 100 epochs. It uses the Adam optimizer for gradient descent.
 
+Usage: python src/train_nn.py
+
+  -m, --model              path to trained model model (default: output/witcher-classifier.h5  
+  -d, --dataset            path to input dataset (default: dataset)  
+  -l, --labelbin           path to output label binarizer (default: lb.pickle)  
+  -p, --plot               path to output accuracy/loss plot (default: output/plot.png)  
+  --show_examples          show some training examples
+
 ## Model loss/accuracy
 
 * Accuracy and Loss:
@@ -28,7 +36,11 @@ The model was trained on 100 epochs. It uses the Adam optimizer for gradient des
 
 A user interface made with pyqt to make the classification easier:
 
-Usage: python ./src/run_nn.py
+Usage: python src/run_nn.py
+
+  -m, --model              path to trained model model (default: output/witcher-classifier.h5  
+  -l, --labelbin           path to output label binarizer (default: lb.pickle)  
+
 
 ## Possible improvements
   * Using classification with object recognition to detect every characters in the image:
