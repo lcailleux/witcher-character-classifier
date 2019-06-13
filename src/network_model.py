@@ -71,8 +71,8 @@ class NetworkModel:
         Evaluate the model on the train/test sets
         :param model:
         :param x_train:
-        :param y_train:
         :param x_test:
+        :param y_train:
         :param y_test:
         """
 
@@ -106,9 +106,9 @@ class NetworkModel:
         """
 
         x = Flatten(name='flatten')(x)
-        x = Dropout(0.25)(x)
+        x = BatchNormalization()(x)
         x = Dense(32, activation='relu')(x)
-        #x = BatchNormalization()(x)
+        x = Dropout(0.1)(x)
         x = Dense(constant.CLASSES, activation='softmax')(x)
 
         return x

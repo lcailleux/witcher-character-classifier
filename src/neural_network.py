@@ -1,4 +1,3 @@
-import imutils
 import cv2
 from keras.models import load_model
 from keras.callbacks import ModelCheckpoint

@@ -26,7 +26,6 @@ class WitcherClassifier(QWidget):
         self.le = QLabel()
         self.le.setFixedWidth(constant.IMAGE_SHOW_WIDTH)
         self.le.setFixedHeight(constant.IMAGE_SHOW_HEIGHT)
-        #self.le.setStyleSheet("background-color: darkgrey")
         self.le.setFrameShape(QFrame.Panel)
         self.le.setFrameShadow(QFrame.Sunken)
         self.le.setLineWidth(1)
