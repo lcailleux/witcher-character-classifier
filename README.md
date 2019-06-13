@@ -23,11 +23,17 @@ The model was trained on 100 epochs. It uses the Adam optimizer for gradient des
 * Accuracy and Loss:
 
    ![Image](./output/plot.png) 
+   
+## User interface
+
+A user interface made with pyqt to make the classification easier:
+
+Usage: python ./src/run_nn.py
 
 ## Possible improvements
   * Using classification with object recognition to detect every characters in the image:
   
-    ![Image](./doc/images/object_recognition.png)
+    ![Image](./doc/images/object-recognition.jpg)
     
 ## Authors and acknowledgment
 Many thanks to Adrian Rosebrock from pysearchimage for his series of articles:
