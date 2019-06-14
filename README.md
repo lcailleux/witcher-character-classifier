@@ -41,6 +41,17 @@ Usage: python src/run_nn.py
   -m, --model              path to trained model model (default: output/witcher-classifier.h5  
   -l, --labelbin           path to output label binarizer (default: lb.pickle)  
 
+## A few classification examples
+
+The model generalizes with examples absent from the training set.
+
+For Geralt:
+
+   ![Image](./doc/images/geralt-classified.png)
+   
+For Ciri:
+
+   ![Image](./doc/images/ciri-classified.jpeg)
 
 ## Possible improvements
   * Using classification with object recognition to detect every characters in the image:

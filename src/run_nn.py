@@ -12,10 +12,9 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 
 class WitcherClassifier(QWidget):
-    def __init__(self, args, parent=None):
+    def __init__(self, parent=None):
         super(WitcherClassifier, self).__init__(parent)
 
-        self.args = args
         self.data_handler = DataHandler()
         self.neural_network = NeuralNetwork()
         layout = QVBoxLayout()
@@ -45,7 +44,7 @@ class WitcherClassifier(QWidget):
         )
 
         if image_file:
-            output_image = self.neural_network.run(self.args, image_file)
+            output_image = self.neural_network.run(args, image_file)
             self.le.setPixmap(QPixmap.fromImage(ndarray_to_qimage(output_image)))
 
 
@@ -57,7 +56,7 @@ if __name__ == "__main__":
     args = vars(ap.parse_args())
 
     app = QApplication(sys.argv)
-    window = WitcherClassifier(args)
+    window = WitcherClassifier()
     window.show()
     sys.exit(app.exec_())
 
