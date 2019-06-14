@@ -3,6 +3,11 @@ from PyQt5 import QtGui
 
 
 def ndarray_to_qimage(image):
+    """
+
+    :param image: image data (numpy array)
+    :return:
+    """
     assert (np.max(image) <= 255)
     image8 = image.astype(np.uint8, order='C', casting='unsafe')
     height, width, colors = image8.shape

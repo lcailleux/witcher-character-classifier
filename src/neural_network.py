@@ -13,7 +13,9 @@ class NeuralNetwork:
 
     def train(self, args):
         """
-        :return:
+
+        :param args: list of arguments (list)
+        :return model: keras.models.Model
         """
 
         vgg_model = self.network_model.pretrained_model()
@@ -51,6 +53,12 @@ class NeuralNetwork:
         return model
 
     def evaluate(self, args):
+        """
+
+        :param args: list of arguments (list)
+        :return:
+        """
+
         print("[INFO] loading network...")
         model = load_model(args["model"])
         x_train, x_test, y_train, y_test = self.data_handler.load_dataset(args)
@@ -59,9 +67,9 @@ class NeuralNetwork:
 
     def run(self, args, image_file):
         """
-        :param args:
-        :param image_file:
-        :return:
+        :param args: list of arguments (list)
+        :param image_file: path of the image file (str)
+        :return output: output image
         """
 
         print("[INFO] loading network...")

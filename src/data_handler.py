@@ -14,8 +14,8 @@ from keras.preprocessing.image import ImageDataGenerator, img_to_array
 class DataHandler:
     def load_dataset(self, args):
         """
-        :param args:
-        :return:
+        :param args: list of arguments (list)
+        :return x_train, x_test, y_train, y_test: train/test sets (numpy arrays)
         """
 
         print("[INFO] loading images...")
@@ -40,6 +40,12 @@ class DataHandler:
         return x_train, x_test, y_train, y_test
 
     def load_data_and_labels(self, args):
+        """
+
+        :param args: list of arguments (list)
+        :return data, labels: loaded data and labels (numpy arrays)
+        """
+
         data = []
         labels = []
 
@@ -65,15 +71,34 @@ class DataHandler:
         return data, labels
 
     def load_labels(self, args):
+        """
+
+        :param args: list of arguments (list)
+        :return lb: label binarizer
+        """
+
         lb = pickle.loads(open(args["labelbin"], "rb").read())
         return lb
 
     def dump_labels(self, args, lb):
+        """
+
+        :param args: list of arguments (list)
+        :param lb: label binarizer
+        :return:
+        """
+
         f = open(args["labelbin"], "wb")
         f.write(pickle.dumps(lb))
         f.close()
 
     def load_example(self, image_path):
+        """
+
+        :param image_path: path of the image (str)
+        :return example, image: example to classify, image copy to display
+        """
+
         example = cv2.imread(image_path)
         image = example.copy()
 
@@ -86,6 +111,10 @@ class DataHandler:
         return example, image
 
     def data_augmentation(self):
+        """
+
+        :return: ImageDataGenerator class
+        """
         return ImageDataGenerator(
             rotation_range=25,
             width_shift_range=0.1,
@@ -99,8 +128,8 @@ class DataHandler:
     def show_examples(self, args, x_train):
         """
 
-        :param args:
-        :param x_train:
+        :param args: list of arguments (list)
+        :param x_train: training set (numpy array)
         :return:
         """
         if args["show_examples"]:
@@ -115,6 +144,7 @@ class DataHandler:
     def display_dataset_shape(self, args):
         """
 
+        :param args: list of arguments (list)
         :return:
         """
         x_train, x_test, y_train, y_test = self.load_dataset(args)

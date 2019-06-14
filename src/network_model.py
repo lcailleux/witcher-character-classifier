@@ -10,7 +10,7 @@ from matplotlib import pyplot as plt
 class NetworkModel:
     def pretrained_model(self):
         """
-        :return:
+        :return: keras.applications.vgg16.VGG16
         """
 
         input_tensor = keras.Input(shape=(constant.IMAGE_HEIGHT, constant.IMAGE_WIDTH, constant.CHANNEL_NUMBER))
@@ -18,9 +18,9 @@ class NetworkModel:
 
     def create(self, input_model, x):
         """
-        :param input_model:
+        :param input_model: keras.applications.vgg16.VGG16
         :param x:
-        :return:
+        :return model: keras.models.Model
         """
 
         for layer in input_model.layers:
@@ -37,8 +37,8 @@ class NetworkModel:
 
     def plot_example(self, image, label=None):
         """
-        :param image:
-        :param label:
+        :param image: image data (numpy array)
+        :param label: image label (str)
         :return:
         """
 
@@ -50,6 +50,7 @@ class NetworkModel:
     def plot_loss_and_accuracy(self, history, args):
         """
         :param history:
+        :param args: list of arguments (list)
         :return:
         """
 
@@ -69,11 +70,11 @@ class NetworkModel:
     def evaluation_metrics(self, model, x_train, x_test, y_train, y_test):
         """
         Evaluate the model on the train/test sets
-        :param model:
-        :param x_train:
-        :param x_test:
-        :param y_train:
-        :param y_test:
+        :param model: keras.models.Model
+        :param x_train: training examples (numpy array)
+        :param x_test: test examples (numpy array)
+        :param y_train: training labels (numpy array)
+        :param y_test: test labels (numpy array)
         """
 
         score_train = model.evaluate(x_train, y_train)
@@ -82,11 +83,11 @@ class NetworkModel:
         print('[INFO] Accuracy on the Train Images: ', score_train[1])
         print('[INFO] Accuracy on the Test Images: ', score_test[1])
 
-    def get_prediction_and_label(self, model, labelizer, example):
+    def get_prediction_and_label(self, model, lb, example):
         """
-        :param labelizer:
-        :param model:
-        :param example:
+        :param lb: label binarizer class
+        :param model: keras.models.Model
+        :param example: example data (numpy array)
         :return:
         """
 
@@ -95,7 +96,7 @@ class NetworkModel:
 
         index = np.argmax(predictions)
         prediction = predictions[index]
-        label = labelizer.classes_[index]
+        label = lb.classes_[index]
 
         return prediction, label
 
@@ -106,9 +107,8 @@ class NetworkModel:
         """
 
         x = Flatten(name='flatten')(x)
-        x = BatchNormalization()(x)
         x = Dense(32, activation='relu')(x)
-        x = Dropout(0.1)(x)
+        x = BatchNormalization()(x)
         x = Dense(constant.CLASSES, activation='softmax')(x)
 
         return x
