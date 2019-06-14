@@ -1,5 +1,24 @@
 # Witcher character classifier
+
 Convolutional Neural Network (CNN) analyzing the features of characters from the witcher 3.
+
+## Description
+
+This is my first personal deep learning project after completing the courses by professor Andrew Ng on Coursera.
+
+Being a fan of the witcher books and games series, I thought it could be fun :).
+
+Feel free to leave remarks on how to improve the model even more.
+
+## Installation
+
+   * Install pip
+   * create a virtual environment using python 3
+   * run the command:
+       ```
+       pip install -r requirements.txt
+       ```
+You can find many guides on pip, python and virtualenv on the web.
 
 ## Preprocessing
   * Creating a dataset using [Microsoft’s Bing Image Search API](https://azure.microsoft.com/en-us/services/cognitive-services/bing-image-search-api/)
@@ -18,6 +37,7 @@ I used transfer learning with pre-trained weights from the VGG-16 model. This he
 
 The model was trained on 100 epochs. It uses the Adam optimizer for gradient descent.
 
+```
 Usage: python src/train_nn.py
 
   -m, --model              path to trained model model (default: output/witcher-classifier.h5  
@@ -25,6 +45,7 @@ Usage: python src/train_nn.py
   -l, --labelbin           path to output label binarizer (default: lb.pickle)  
   -p, --plot               path to output accuracy/loss plot (default: output/plot.png)  
   --show_examples          show some training examples
+```
 
 ## Model loss/accuracy
 
@@ -36,27 +57,31 @@ Usage: python src/train_nn.py
 
 A user interface made with pyqt to make the classification easier:
 
+```
 Usage: python src/run_nn.py
 
   -m, --model              path to trained model model (default: output/witcher-classifier.h5  
   -l, --labelbin           path to output label binarizer (default: lb.pickle)  
+```
 
 ## A few classification examples
 
 The model generalizes with examples absent from the training set.
 
-For Geralt:
+For Geralt (painting):
 
    ![Image](./doc/images/geralt-classified.png)
    
-For Ciri:
+For Ciri (screenshot taken in-game by myself):
 
-   ![Image](./doc/images/ciri-classified.jpeg)
+   ![Image](./doc/images/ciri-classified.png)
 
 ## Possible improvements
   * Using classification with object recognition to detect every characters in the image:
   
     ![Image](./doc/images/object-recognition.jpg)
+    
+  * Using more training examples.
     
 ## Authors and acknowledgment
 Many thanks to Adrian Rosebrock from pysearchimage for his series of articles:
