@@ -29,7 +29,7 @@ class NetworkModel:
         model = Model(inputs=input_model.input, outputs=x)
         model.compile(
             loss=constant.MODEL_LOSS,
-            optimizer=Adam(lr=constant.LEARNING_RATE),
+            optimizer=Adam(lr=constant.LEARNING_RATE, decay=constant.LEARNING_RATE / constant.EPOCHS),
             metrics=['accuracy']
         )
 
