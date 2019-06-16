@@ -81,7 +81,7 @@ For Ciri (screenshot taken in-game by myself):
    ![Image](./doc/images/ciri-classified.png)
 
 ## Possible improvements
-  * Using classification with object recognition to detect every characters in the image:
+  * Using classification with object recognition to detect every character in the image:
   
     ![Image](./doc/images/object-recognition.jpg)
     
