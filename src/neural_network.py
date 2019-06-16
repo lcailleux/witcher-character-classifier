@@ -83,7 +83,7 @@ class NeuralNetwork:
         if percentage < 50:
             label = constant.UNKNOWN_LABEL
 
-        label = "{}: {:.2f}%".format(label, percentage)
+        label = "{}: {:.2f}%".format(label.title(), percentage)
         output = cv2.resize(image, (constant.IMAGE_SHOW_WIDTH, constant.IMAGE_SHOW_HEIGHT))
 
         cv2.putText(output, label, (10, 25), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
