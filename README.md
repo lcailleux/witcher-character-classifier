@@ -1,12 +1,16 @@
 # Witcher character classifier
 
-Convolutional Neural Network (CNN) analyzing the features of characters from the witcher 3.
+Convolutional Neural Network (CNN) analyzing pictures of characters from "The Witcher 3" video game in order to establish a classification.
 
 ## Description
 
 This is my first personal deep learning project after completing the courses by professor Andrew Ng on Coursera.
 
 Being a fan of the witcher books and games series, I thought it could be fun :).
+
+The project was made with the deep learning framework Keras and can recognize up to 12 different characters:
+
+   ![Image](./doc/images/characters.png)
 
 Feel free to leave remarks on how to improve the model even more.
 

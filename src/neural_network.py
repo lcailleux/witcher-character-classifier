@@ -14,7 +14,7 @@ class NeuralNetwork:
     def train(self, args):
         """
 
-        :param args: list of arguments (list)
+        :param args: dictionary of arguments (dict)
         :return model: keras.models.Model
         """
 
@@ -55,7 +55,7 @@ class NeuralNetwork:
     def evaluate(self, args):
         """
 
-        :param args: list of arguments (list)
+        :param args: dictionary of arguments (dict)
         :return:
         """
 
@@ -67,7 +67,7 @@ class NeuralNetwork:
 
     def run(self, args, image_file):
         """
-        :param args: list of arguments (list)
+        :param args: dictionary of arguments (dict)
         :param image_file: path of the image file (str)
         :return output: output image
         """

@@ -50,7 +50,7 @@ class NetworkModel:
     def plot_loss_and_accuracy(self, history, args):
         """
         :param history:
-        :param args: list of arguments (list)
+        :param args: dictionary of arguments (dict)
         :return:
         """
 
