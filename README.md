@@ -53,7 +53,7 @@ Usage: python src/train_nn.py
 
 ## Model loss/accuracy
 
-* Accuracy and Loss:
+* Loss and Accuracy:
 
    ![Image](./output/plot.png) 
    
