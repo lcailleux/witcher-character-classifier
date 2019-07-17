@@ -37,7 +37,7 @@ You can find many guides on pip, python and virtualenv on the web.
 
 I used transfer learning with pre-trained weights from the VGG-16 model. This helped the model to learn better.
 
-### Training process
+## Training process
 
 The model was trained on 100 epochs. It uses the Adam optimizer for gradient descent.
 
